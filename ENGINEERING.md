@@ -1,4 +1,6 @@
-# How we achieved it
+# How we are building it
+
+The goal is broader than a Minecraft bot: a reusable way to turn purpose into verified action. We started with one demanding environment so the architecture could be tested against real effects rather than only convincing conversations.
 
 ## 1. Start with observable facts
 
@@ -32,6 +34,12 @@ We preserve uncertain outcomes, avoid automatic replay or refund, and require ne
 
 A controlled surface pilot returned Home after approximately 115.5 blocks of total multi-leg travel. This supports bounded movement and return behavior in that test. It does not demonstrate a full autonomous hour, a 2,000-block outward expedition, live cave gathering or chest deposit. Later failures are part of the engineering story, not omitted evidence.
 
+## 6. Separate the reusable idea from the first integration
+
+Minecraft forces us to distinguish a plan from a physical effect, historical observations from current state, and an attempted action from a verified result. Those distinctions are useful elsewhere. The specific movement controller, collision geometry and game protocol are not universal.
+
+The next architectural challenge is proving a clean environment boundary without losing these checks. We do not treat conceptual portability as completed implementation. [The roadmap](VISION.md) explains what a second-environment demonstration would need to prove.
+
 ## What comes next
 
-Complete the current freshness/performance evaluation, record representative Twitch demonstrations, and keep capability claims tied to what was actually tested. This page is an engineering account, not an operational readiness dashboard.
+Complete the freshness/performance evaluation, judge behavior by useful outcomes, and record representative Twitch demonstrations. Then prove the environment boundary with a bounded second integration. This is an engineering account, not a live readiness dashboard or a release announcement for a general-purpose SDK.
